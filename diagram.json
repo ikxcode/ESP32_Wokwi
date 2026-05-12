@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "author": "Student",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -12,
+      "left": -7,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -187,
+      "left": 248,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 154,
+      "left": 248,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 250,
+      "left": -202,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 250,
+      "left": -72,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz1",
+      "top": 90,
+      "left": -232,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -187,
+      "left": -232,
+      "attrs": {
+        "color": "green"
+      }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:SDA", "esp:D4", "green", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+
+    [ "pot1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:D34", "blue", [ "v0" ] ],
+
+    [ "btn1:1.l", "esp:D27", "red", [ "v0" ] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [ "v0" ] ],
+
+    [ "btn2:1.l", "esp:D26", "blue", [ "v0" ] ],
+    [ "btn2:2.l", "esp:GND.2", "black", [ "v0" ] ],
+
+    [ "buzz1:1", "esp:D19", "purple", [ "v0" ] ],
+    [ "buzz1:2", "esp:GND.2", "black", [ "v0" ] ],
+
+    [ "led1:A", "esp:D2", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ]
+  ]
+}
